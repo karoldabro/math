@@ -1,3 +1,8 @@
+<p align="center">
+ <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/karoldabro/math/php.yml">
+<img alt="Packagist Version" src="https://img.shields.io/packagist/v/kdabrow/math">
+</p>
+
 # Math
 Objective wrapper over BCMath
 
