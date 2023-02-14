@@ -26,7 +26,7 @@ class BcComparator implements ComparatorInterface
      */
     public function isEqualOrBigger(array $numbers): bool
     {
-        return $this->evaluate($numbers, fn ($result) => $result == 1);
+        return $this->evaluate($numbers, fn ($result) => $result == -1);
     }
 
     /**
@@ -34,7 +34,7 @@ class BcComparator implements ComparatorInterface
      */
     public function isEqualOrLower(array $numbers): bool
     {
-        return $this->evaluate($numbers, fn ($result) => $result == -1);
+        return $this->evaluate($numbers, fn ($result) => $result == 1);
     }
 
     /**
@@ -42,7 +42,7 @@ class BcComparator implements ComparatorInterface
      */
     public function isBigger(array $numbers): bool
     {
-        return $this->evaluate($numbers, fn ($result) => $result == 1 || $result == 0);
+        return $this->evaluate($numbers, fn ($result) => $result == -1 || $result == 0);
     }
 
     /**
@@ -50,7 +50,7 @@ class BcComparator implements ComparatorInterface
      */
     public function isLower(array $numbers): bool
     {
-        return $this->evaluate($numbers, fn ($result) => $result == -1 || $result == 0);
+        return $this->evaluate($numbers, fn ($result) => $result == 1 || $result == 0);
     }
 
     /**

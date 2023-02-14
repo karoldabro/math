@@ -91,7 +91,7 @@ class NumberTest extends TestCase
     {
         $number = new Number('100');
 
-        $this->assertTrue($number->isEqualOrBigger(['100', new Number('101')]));
+        $this->assertTrue($number->isEqualOrBigger(['100', new Number('99')]));
     }
 
     /** @test */
@@ -99,7 +99,7 @@ class NumberTest extends TestCase
     {
         $number = new Number('100');
 
-        $this->assertTrue($number->isEqualOrLower(['100', new Number('99')]));
+        $this->assertTrue($number->isEqualOrLower(['100', new Number('101')]));
     }
 
     /** @test */
@@ -107,7 +107,7 @@ class NumberTest extends TestCase
     {
         $number = new Number('100');
 
-        $this->assertTrue($number->isBigger(['101', new Number('101')]));
+        $this->assertTrue($number->isBigger(['99', new Number('99')]));
     }
 
     /** @test */
@@ -115,7 +115,7 @@ class NumberTest extends TestCase
     {
         $number = new Number('100');
 
-        $this->assertTrue($number->isLower(['99', new Number('98')]));
+        $this->assertTrue($number->isLower(['101', new Number('102')]));
     }
 
     /** @test */

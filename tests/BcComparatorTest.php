@@ -46,7 +46,7 @@ class BcComparatorTest extends TestCase
         $calculator = new BcComparator(new Number('100'));
 
         $this->assertTrue($calculator->isEqualOrBigger(['100']));
-        $this->assertTrue($calculator->isEqualOrBigger(['101']));
+        $this->assertTrue($calculator->isEqualOrBigger(['99']));
     }
 
     /** @test */
@@ -54,7 +54,7 @@ class BcComparatorTest extends TestCase
     {
         $calculator = new BcComparator(new Number('100'));
 
-        $this->assertFalse($calculator->isEqualOrBigger(['99']));
+        $this->assertFalse($calculator->isEqualOrBigger(['101']));
     }
 
     /** @test */
@@ -63,7 +63,7 @@ class BcComparatorTest extends TestCase
         $calculator = new BcComparator(new Number('100'));
 
         $this->assertTrue($calculator->isEqualOrLower(['100']));
-        $this->assertTrue($calculator->isEqualOrLower(['99']));
+        $this->assertTrue($calculator->isEqualOrLower(['101']));
     }
 
     /** @test */
@@ -71,7 +71,7 @@ class BcComparatorTest extends TestCase
     {
         $calculator = new BcComparator(new Number('100'));
 
-        $this->assertFalse($calculator->isEqualOrLower(['101']));
+        $this->assertFalse($calculator->isEqualOrLower(['99']));
     }
 
     /** @test */
@@ -79,7 +79,7 @@ class BcComparatorTest extends TestCase
     {
         $calculator = new BcComparator(new Number('100'));
 
-        $this->assertTrue($calculator->isBigger(['101']));
+        $this->assertTrue($calculator->isBigger(['99']));
     }
 
     /** @test */
@@ -88,6 +88,23 @@ class BcComparatorTest extends TestCase
         $calculator = new BcComparator(new Number('100'));
 
         $this->assertFalse($calculator->isBigger(['100']));
-        $this->assertFalse($calculator->isBigger(['99']));
+        $this->assertFalse($calculator->isBigger(['101']));
+    }
+
+    /** @test */
+    public function return_true_when_number_is_lower()
+    {
+        $calculator = new BcComparator(new Number('100'));
+
+        $this->assertTrue($calculator->isLower(['101']));
+    }
+
+    /** @test */
+    public function return_true_when_number_is_lower_or_equal_when_lower()
+    {
+        $calculator = new BcComparator(new Number('100'));
+
+        $this->assertFalse($calculator->isLower(['100']));
+        $this->assertFalse($calculator->isLower(['99']));
     }
 }

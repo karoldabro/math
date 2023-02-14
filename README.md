@@ -137,9 +137,9 @@ use Kdabrow\Math\Number;
 
 $number = new Number('2');
 
-$number->isEqualOrBigger('3'); // true
+$number->isEqualOrBigger('3'); // false
 $number->isEqualOrBigger('2'); // true
-$number->isEqualOrBigger('1'); // false
+$number->isEqualOrBigger('1'); // true
 ```
 
 ### Is equal or lower
@@ -149,9 +149,9 @@ use Kdabrow\Math\Number;
 
 $number = new Number('2');
 
-$number->isEqualOrLower('3'); // false
+$number->isEqualOrLower('3'); // true
 $number->isEqualOrLower('2'); // true
-$number->isEqualOrLower('1'); // true
+$number->isEqualOrLower('1'); // false
 ```
 
 ### Is lower
@@ -161,9 +161,9 @@ use Kdabrow\Math\Number;
 
 $number = new Number('2');
 
-$number->isLower('3'); // false
-$number->isLower('2'); // false
-$number->isLower('1'); // true
+$number->isLower('3'); // true
+$number->isLower('2'); // true
+$number->isLower('1'); // false
 ```
 
 ### Is bigger
@@ -173,9 +173,9 @@ use Kdabrow\Math\Number;
 
 $number = new Number('2');
 
-$number->isBigger('3'); // true
-$number->isBigger('2'); // false
-$number->isBigger('1'); // false
+$number->isBigger('3'); // false
+$number->isBigger('2'); // true
+$number->isBigger('1'); // true
 ```
 
 ## Development
